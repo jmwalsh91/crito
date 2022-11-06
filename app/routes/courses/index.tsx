@@ -1,13 +1,14 @@
 import { Carousel } from "@mantine/carousel";
-import { Card, Title, Text, Grid, Blockquote, Button } from "@mantine/core";
-import { Outlet, useNavigate } from "@remix-run/react";
+import { Card, Title, Text, Grid, Blockquote } from "@mantine/core";
+import { Outlet } from "@remix-run/react";
 import Backdrop from "~/components/Backdrop";
 import Board from "~/components/Surfaces/Board";
 
 export default function Index() {
-  const navigate = useNavigate()
   return (
     <Backdrop>
+        <Title order={1}>Courses.</Title>
+        <Outlet />
    <Carousel
    height="40rem"
    slideSize="33.3333%"
@@ -37,7 +38,8 @@ export default function Index() {
 </Carousel.Slide>
 
    </Carousel>
-   <Button onClick={() => navigate(`courses`)}>Click me</Button>
+
+    <Outlet />
     </Backdrop>
      
   );
