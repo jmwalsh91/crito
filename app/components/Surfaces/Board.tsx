@@ -1,5 +1,7 @@
 import { Card, Title, Text, Stack } from '@mantine/core'
+import { useNavigate } from '@remix-run/react'
 import React from 'react'
+import ViewWrapper from '../Motion/ViewWrapper'
 
 type Props = {
     image: string,
@@ -7,32 +9,34 @@ type Props = {
 }
 
 function Board({image, title}: Props) {
+  const navigate = useNavigate()
   return (
-    <Stack justify="center" align="center">
+    <ViewWrapper>
 
-    <Card sx={{
-        margin: "0 auto",
-        marginTop: "5 rem",
-        height: "30rem",
-        width: "12rem",
-        borderRadius: "10rem",
-        backgroundImage: `url("${image}")`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        
-    }}>
-        <Title>Thing</Title>
-        <Card.Section>
-      <Text>
-        This thing.
-      </Text>
-        </Card.Section>
+    <Stack justify="center" align="center">
+    <Card
+    onClick={() => navigate(`:${title}`)}
+sx={{
+    margin: "0 auto",
+    marginTop: "5 rem",
+    height: "25rem",
+    width: "10rem",
+    borderRadius: "10rem",
+    backgroundImage: `url("${image}")`,
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    boxShadow: "0px 5px 10px 4px rgba(0, 0, 0, 0.5)",
+    
+    
+}}>
+ 
   
       </Card>
       <Text size="xl" weight={700}> {title}</Text>
           </Stack>
+
+        </ViewWrapper>
   )
 }
-
 export default Board

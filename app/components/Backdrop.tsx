@@ -10,7 +10,7 @@ function Backdrop({children}: Props) {
     <Container fluid
     sx={{
         height: "100%",
-        width: "100%",
+
         backgroundImage: `url("/Crito.webp")`,
         backgroundSize: "cover",
         backgroundPosition: "center",

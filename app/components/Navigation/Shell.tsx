@@ -24,11 +24,11 @@ export default function Shell({children}: any) {
       }}
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
-      navbar={
+     /*  navbar={
         <Navbar p="md" hiddenBreakpoint="xl" hidden={!opened} width={{ sm: 200, lg: 300 }}>
           <Text>Navigation.</Text>
         </Navbar>
-      }
+      } */
      
       header={
         <Header height={70} p="md">
