@@ -11,7 +11,6 @@ function Index({}: Props) {
         <Card 
         sx={{
             position: "absolute",
-      
             zIndex: 1000,
             width: '80vw',
             height: '70vh',
